@@ -1,10 +1,16 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  let slides = document.querySelectorAll("#slider .slides img");
-  let currentSlide = 0;
-  setInterval(() => {
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
-  }, 3000);
+  const overlay = document.getElementById('loading-overlay');
+
+  // Hide the loading overlay after 2 seconds
+  setTimeout(() => {
+      overlay.style.display = 'none';
+  }, 2000);
+
+  // Add-to-cart button event
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  addToCartButtons.forEach((button) => {
+      button.addEventListener('click', (e) => {
+          alert(`Added ${e.target.dataset.name} to cart!`);
+      });
+  });
 });
