@@ -212,15 +212,107 @@ flex-wrap: wrap;
 #product1 {
     text-align: center;
 }
+/* Product container styling */
+#product1 .pro-container {
+    display: flex;
+    justify-content: space-between; /* Distributes items evenly */
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    gap: 15px; /* Adds spacing between rows and columns */
+    padding-top: 25px;
+    margin: 12px auto;
+    max-width: 1200px; /* Restricts the container width */
+}
 
+/* Individual product card styling */
 #product1 .pro {
-    width: 10%;
-    min-width: 180px;
+    flex: 1 1 calc(25% - 20px); /* 25% width per item for 4 items per row, accounting for gaps */
+    max-width: 22%; /* Smaller width to make images smaller but still maintain 4 per row */
+    min-width: 180px; /* Ensures a minimum size for each item */
     padding: 10px 12px;
     border: 1px solid #cce7d0;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    background-color: #ffffff;
+}
+
+/* Hover effects for product cards */
+#product1 .pro:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive media queries */
+@media screen and (max-width: 768px) {
+    #product1 .pro {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row on tablets */
+        max-width: 48%; /* Restricts max width for better fit */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #product1 .pro {
+        flex: 1 1 calc(100% - 20px); /* Single item per row on small screens */
+        max-width: 100%;
+    }
+}
+
+
+#product1 .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+
 }
 
 #product1 .pro img {
     width: 100%;
     border-radius: 20px;
 }
+
+#product1 .pro .des{
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product1 .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#product1 .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#product1 .pro .des i {
+     font-size: 12px;
+     color: rgba(243, 181, 25);
+}
+
+#product1 .pro .des h4{
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+#product1 .pro .cart {
+    width: 35px;
+    height: 35px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 9px;
+    right: 10px;
+
+}
+
+
+
