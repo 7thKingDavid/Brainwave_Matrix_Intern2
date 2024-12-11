@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kings_eStore offers super quality deals on clothing, accessories, and more. Explore up to 70% off!">
     <title>Kings_eStore - Home</title>
-    <link rel="icon" type="image/x-icon" href="./assets/Images/King’s e-Store.png">
+    <link rel="icon" type="image/x-icon" href="./assets/Images/Kings_e-Store.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     
     <section id="header">
-        <a href="#"><img src="./assets/Images/King’s e-Store.png" class="logo" alt=""></a>
+        <a href="#"><img src="./assets/Images/Kings_e-Store.png" class="logo" alt=""></a>
 
         <div>
             <ul id="navbar">
@@ -37,53 +38,67 @@
         <p>You can now checkout you purchase!</p>
     </section>  
 
-  <section id="cart" class="section-p1">
-    <table width="100%">
-        <thead>
-            <tr>
-                <td>Remove</td>
-                <td>Images</td>
-                <td>Products</td>
-                <td>Price</td>
-                <td>Quantity</td>
-                <td>Subtotal</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                <td><img src="./assets/Images/hoodie1-2.png" alt="" ></td>
-                <td>Quality full-cutton Hoodie</td>
-                <td>$118.19</td>
-                <td><input type="number" value="1"></td>
-                <td>$118.19</td>
-            </tr>
-            <tr>
-                <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                <td><img src="./assets/Images/check1.png" alt="" ></td>
-                <td>New style Shirt</td>
-                <td>$280.00</td>
-                <td><input type="number" value="1"></td>
-                <td>$280.00</td>
-            </tr>
-            <tr>
-                <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                <td><img src="./assets/Images/jack1-3.png" alt="" ></td>
-                <td>Quality full-cutton swag Hoodie</td>
-                <td>$350.00</td>
-                <td><input type="number" value="1"></td>
-                <td>$350.00</td>
-            </tr>
-        </tbody>
-    </table>
-  </section>
 
-  <section id="cart-add" class="section-p1">
+
+ 
+    <section id="cart" class="section-p1">
+        <h2 id="empty-cart-message">Your items will appear here!</h2>
+        <table width="100%" id="cart-table" style="display: none;">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Images</td>
+                    <td>Products</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Dynamically populated cart items -->
+            </tbody>
+        </table>
+    </section>
+    
+    
+    
+    <section id="cart-add" class="section-p1">
+        <div id="coupon">
+            <h3>Apply Coupon</h3>
+            <div>
+                <input type="text" id="coupon-input" placeholder="Enter Your Coupon">
+                <button class="normal coupon-btn" id="apply-coupon">Apply</button>
+            </div>
+        </div>
+    
+        <div id="subtotal">
+            <h3>Cart Totals</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td id="subtotal-value">$0.00</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td id="total-value"><strong>$0.00</strong></td>
+                </tr>
+            </table>
+            <button class="normal proceed-btn" id="proceed-checkout">Proceed to checkout</button>
+        </div>
+    </section>
+    
+    
+
+<section id="cart-add" class="section-p1" style="display: none;">
     <div id="coupon">
         <h3>Apply Coupon</h3>
         <div>
-            <input type="text" placeholder="Enter Your Coupon">
-            <button class="normal">Apply</button>
+            <input type="text" id="coupon-input" placeholder="Enter Your Coupon">
+            <button class="normal coupon-btn" id="apply-coupon">Apply</button>
         </div>
     </div>
 
@@ -92,7 +107,7 @@
         <table>
             <tr>
                 <td>Cart Subtotal</td>
-                <td>$ 748.19</td>
+                <td id="subtotal-value">$0.00</td>
             </tr>
             <tr>
                 <td>Shipping</td>
@@ -100,18 +115,21 @@
             </tr>
             <tr>
                 <td><strong>Total</strong></td>
-                <td><strong>$ 748.19</strong></td>
+                <td id="total-value"><strong>$0.00</strong></td>
             </tr>
         </table>
-        <button class="normal">Proceed to checkout</button>
+        <button class="normal proceed-btn" id="proceed-checkout">Proceed to checkout</button>
     </div>
-  </section>
- 
+</section>
+
+
+
+  
 
 
     <footer class="section-p1">
         <div class="col">
-            <img src="./assets/Images/King’s e-Store.png" alt="" class="logo logo2"/>
+            <img src="./assets/Images/Kings_e-Store.png" alt="" class="logo logo2"/>
             <h4>Contact</h4>
             <p><strong>Address:</strong> Sector 63, Noida, Uttar Pradesh 201301, India</p>
             <p><strong>Phone:</strong> +234 815 524 6010 / +234 803 716 9342</p>
@@ -160,6 +178,7 @@
             <p>&copy;Eze-David's Brainwave Matrix Solutions Internship Task2 2024</p>
         </div>
     </footer>
+
 
 
 
